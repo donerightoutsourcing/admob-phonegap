@@ -7,7 +7,8 @@
     <keywords>ad,admob,google,google-play-service,iad,flurry,device,adwhirl</keywords>
     <description>
     Admob SDK Plugin for phonegap and cordova ,support ios and android,support admob v1 and admob v2
-    project home:https://github.com/gooogleadmob/admob-phonegap
+        project home:http://sourceforge.net/p/phonegap-admob/wiki/Home/<br/>
+		google code:http://code.google.com/p/admob-phonegap/ 
     </description>
     <license>Apache 2.0 License</license>
     <js-module src="www/AdmobPlugin.js" name="AdmobAd">
