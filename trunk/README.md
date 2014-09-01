@@ -1,64 +1,89 @@
-admob phonegap(cordova) plugin
+﻿admob phonegap(cordova) plugin
 ====================
 
 admob phonegap(cordova) plugin，support ios and android<br/>
-build base on phonegap 3.4 or cordova 3.5<br/>
-home:https://github.com/gooogleadmob/phonegap-admob-plugin/<br/>
-phonegap:http://docs.phonegap.com/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface  <br/>
+build base on phonegap 3.4 or cordova 3.5 ,admob ios sdk 6.10.0 ,admob google play service 4.5<br/>
+home:  http://sourceforge.net/projects/phonegap-admob/<br/>
+google code:http://code.google.com/p/admob-phonegap/
+
+phonegap:  http://docs.phonegap.com/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface  <br/>
 
 ###how to install google admob phonegap plugin?
 use the cordova command<br/>
-download the plugin ,then install with local location<br/>
-cordova plugin add c:\phonegap-admob-plugin  (plugin saved position)<br/>
+download the plugin ,then install with local location
+```
+cordova plugin add c:\phonegap-admob-plugin 
+```
 
-how to use admob phonegap plugin?<br/>
-###1.create and show admob banner ad in html5 app
+or install cordova plugin online 
 ```
-    function showBanner() {
-        var successCreateBannerView = function () {
-            admobAd.showBanner(admobAd.AD_POSITION.BOTTOM_CENTER);//show banner at the bottom center 
-        };
-        var errorCreateBannerView = function (message) {
-            console.log("create ad fail " + message);
-        };
-         admobAd.initBanner("your admob id here", admobAd.AD_SIZE.BANNER.width, admobAd.AD_SIZE.BANNER.height, successCreateBannerView, errorCreateBannerView);//create admob banner
-    }
-    showBanner();
+cordova plugin add com.admob.admobplugin
 ```
-###2.show admob Interstitial in cordova app ：
+
+use the phonegap command<br/>
+download the plugin ,then install with local location
+```
+phonegap plugin add c:\phonegap-admob-plugin 
+```
+
+###show admob banner  at relation position 
+```
+    
+admobAd.initBanner("your admob id here", admobAd.AD_SIZE.BANNER.width, admobAd.AD_SIZE.BANNER.height);//create admob banner
+admobAd.showBanner(admobAd.AD_POSITION.BOTTOM_CENTER);//show banner at the bottom center 
+    
+```
+### show admob banner ad at absolute position
+```
+    
+admobAd.initBanner("your admob id here", admobAd.AD_SIZE.BANNER.width, admobAd.AD_SIZE.BANNER.height);//create admob banner
+admobAd.showBannerAbsolute(0,100);//show banner at absolute position
+    
+```
+###show admob Interstitial in cordova app ：
 ```
  function onInterstitialReceive(message) {
      admobAd.showInterstitial();//show Interstitial after receive or after game over
  }
- function successCreateInterstitial() {
-     admobAd.cacheInterstitial();// load admob Interstitial
- }
-  document.addEventListener('onAdmobInterstitialReceive', this.onInterstitialReceive, false);//handler admob event
-  admobAd.initInterstitial("your admob id here", successCreateInterstitial);//create Interstitial ad
+ 
+  document.addEventListener(admobAd.AdEvent.onInterstitialReceive, onInterstitialReceive, false);//handler admob event
+  admobAd.initInterstitial("your admob id here");//create Interstitial ad
+  admobAd.cacheInterstitial();// load admob Interstitial
 
 ```
-###3.handle admob ad event
+###handle admob ad event
 you can handler all native event of admob ,as onInterstitialReceive <br/>
 all event type is in AdEvent<br/>
 ```
-document.addEventListener('onAdmobBannerDismiss', this.onAdmobEvent, false);
-document.addEventListener('onAdmobBannerFailedReceive', this.onAdmobEvent, false);
-document.addEventListener('onAdmobBannerLeaveApplication', this.onAdmobEvent, false);
-document.addEventListener('onAdmobBannerPresent', this.onAdmobEvent, false);
-document.addEventListener('onAdmobBannerReceive', this.onAdmobEvent, false);
-document.addEventListener('onAdmobInterstitialDismiss', this.onAdmobEvent, false);
-document.addEventListener('onAdmobInterstitialFailedReceive', this.onAdmobEvent, false);
-document.addEventListener('onAdmobInterstitialLeaveApplication', this.onAdmobEvent, false);
-document.addEventListener('onAdmobInterstitialPresent', this.onAdmobEvent, false);
-document.addEventListener('onAdmobInterstitialReceive', this.onAdmobEvent, false);
+function onAdmobEvent (message) {
+    //do some on admob event
+}
+document.addEventListener('onAdmobBannerDismiss', onAdmobEvent, false);
+document.addEventListener('onAdmobBannerFailedReceive', onAdmobEvent, false);
+document.addEventListener('onAdmobBannerLeaveApplication', onAdmobEvent, false);
+document.addEventListener('onAdmobBannerPresent', onAdmobEvent, false);
+document.addEventListener('onAdmobBannerReceive', onAdmobEvent, false);
+document.addEventListener('onAdmobInterstitialDismiss', onAdmobEvent, false);
+document.addEventListener('onAdmobInterstitialFailedReceive', onAdmobEvent, false);
+document.addEventListener('onAdmobInterstitialLeaveApplication', onAdmobEvent, false);
+document.addEventListener('onAdmobInterstitialPresent', onAdmobEvent, false);
+document.addEventListener('onAdmobInterstitialReceive', onAdmobEvent, false);
 ```
 ###more function
-1.show admob banner with Absolute position<br/>
-showBannerAbsolute(x,y, successCallback, failureCallback)<br/>
-2.hide admob banner<br/>
-hideBanner()<br/>
-3.test if Interstitial has loaded success<br/>
-function isInterstitialReady( successCallback, failureCallback) <br/>
-4.for more usage ,ref to index.js<br/>
+1.hide admob banner
+```
+admobAd.hideBanner()
+```
+
+2.test if Interstitial has loaded success
+```
+admobAd.isInterstitialReady(function(isReady){
+    if(isReady){
+        alert("admob Interstitial loaded");
+    }
+});
+```
+
+3.for more usage ,ref to files in Example <br/>
 
 contact:gooogleadmob@gmail.com
