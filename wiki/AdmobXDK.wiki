@@ -1,4 +1,5 @@
 #labels admob,xdk,phonegap,cordova,ios,android,plugin,ad,intel-app-framework
+{{{
 If you want to include AdMob (by Google) advertisements as part of your HTML5 mobile app, you will need to use a Cordova plugin. 
 
 
@@ -12,3 +13,4 @@ To see the latest available samples provided with the Intel XDK it is best to ch
 
 
 NOTE: because an AdMob application includes a third-party Cordova plugin, it will only run on a real device and simulator. You must use the Build tab to create an APK (for Android) or IPA (for iOS) to test your AdMob application. If you attempt to run this app using the browser, Test or Debug tabs the AdMob APIs will fail. Apps that utilize Cordova plugins can only be built using the Cordova build targets. Attempting to use the "legacy" build targets will not work.
+}}}
