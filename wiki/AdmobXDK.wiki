@@ -1,0 +1,14 @@
+#labels admob,xdk,phonegap,cordova,ios,android,plugin,ad,intel-app-framework
+If you want to include AdMob (by Google) advertisements as part of your HTML5 mobile app, you will need to use a Cordova plugin. 
+
+
+AdMob plugins for Cordova can be found on the Cordova Plugins Registry(http://plugins.cordova.io/#/package/com.admob.admobplugin) or google code (https://code.google.com/p/admob-phonegap/). Details regarding how to use the AdMob system as a means of monetization are available in the AdMob support pages.
+
+Before you can serve any AdMob ads you must sign up for an AdMob account at www.admob.com. AdMob does not charge a fee for creating an account or for serving up AdMob ads (be aware that some AdMob plugins vendors do charge a fee for the use of their plugin). If you have an AdMob account you must create a set of Ad Unit IDs that identify your ad impressions and provide these IDs as part of the AdMob API initialization sequence within your app. A screenshot of the online AdMob tool you use to create the Ad Unit IDs is shown below.
+
+IMPORTANT: each application should have its own set of Ad Unit IDs! If you do not yet have an app in an app store, you can use the "manual" method to identify your app for the purpose of obtaining Ad Unit IDs.
+To see the latest available samples provided with the Intel XDK it is best to check the "Work with a Demo" option under the "Start a New Project" button. In addition to those samples provided on the Intel XDK "Work with a Demo" panel, enter name admobplugin ,plugin ID com.admob.AdmobPlugin ,checked  the plugin is located in apache cordova plugins.then click import.
+
+
+
+NOTE: because an AdMob application includes a third-party Cordova plugin, it will only run on a real device and simulator. You must use the Build tab to create an APK (for Android) or IPA (for iOS) to test your AdMob application. If you attempt to run this app using the browser, Test or Debug tabs the AdMob APIs will fail. Apps that utilize Cordova plugins can only be built using the Cordova build targets. Attempting to use the "legacy" build targets will not work.
