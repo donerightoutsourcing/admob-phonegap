@@ -3,15 +3,18 @@
 
 admob phonegap(cordova) plugin，support ios and android<br/>
 build base on phonegap 3.4 or cordova 3.5 ,admob ios sdk 6.10.0 ,admob google play service 4.5<br/>
-home:  http://sourceforge.net/projects/phonegap-admob/<br/>
-google code:https://code.google.com/p/admob-cordova-plugin/<br/>
+home:https://github.com/admob-google/admob-phonegap<br/>
+phonegap:http://docs.phonegap.com/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface  <br/>
+
+### new version  warning
+this plugin is depressed,please use new version https://github.com/admob-google/admob-cordova
 
 ###how to install google admob phonegap plugin?
 use the cordova command<br/>
 download the plugin ,then install with local location
-```
-cordova plugin add c:\phonegap-admob-plugin 
-```
+
+    cordova plugin add c:\phonegap-admob-plugin 
+
 
 or install cordova plugin online 
 ```
@@ -23,10 +26,9 @@ download the plugin ,then install with local location
 ```
 phonegap plugin add c:\phonegap-admob-plugin 
 ```
-
 use phonegap builder ,add config<br/>
 ```
-<gap:plugin name="com.admob.plugin" version="1.0.0" source="plugins.cordova.io"/>
+<gap:plugin name="com.admob.plugin" version="3.0.0" source="plugins.cordova.io"/>
 ```
 
 ###show admob banner  at relation position 

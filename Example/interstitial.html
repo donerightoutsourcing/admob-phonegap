@@ -29,8 +29,6 @@
         admobAd.isInterstitialReady(function(isReady){
             if(isReady){
                 admobAd.showInterstitial();
-            }else{
-                admobAd.cacheInterstitial();
             }
         });
     }
@@ -41,7 +39,7 @@
        alert("load fail: "+message.type+"  "+message.data);
     }
     function onDeviceReady() {
-        admobAd.initInterstitial("ca-app-pub-xxxxxxxxxxxxxxxxxxxx/xxxxxxxxx");
+        admobAd.initInterstitial("institial id");
         document.addEventListener(admobAd.AdEvent.onInterstitialReceive, onInterstitialReceive, false);
         document.addEventListener(admobAd.AdEvent.onInterstitialFailedReceive,onReceiveFail, false);
     }
